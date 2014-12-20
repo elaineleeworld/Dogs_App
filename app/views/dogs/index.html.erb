@@ -1,0 +1,12 @@
+<h1>List of All Dogs</h1>
+
+<% @dogs.each do |dog| %>
+
+   <%= dog.name %> is from  <%= dog.city %> and here I am! 
+   <%= image_tag(dog.pic, height: "100px" )%>
+   <br/>
+
+<% end %>
+
+
+
