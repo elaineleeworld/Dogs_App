@@ -1,0 +1,10 @@
+<%= form_for @dog do |f| %>
+	Name: <%= f.text_field :name %>
+	Age: <%= f.text_field :age %>
+	Breed: <%= f.text_field :breed %>
+	City: <%= f.text_field :city %>
+	Pic: <%= image_tag(dog.pic, height: "150px" )%>
+
+	<%= f.submit "Submit!" %>
+
+<%= end %>
