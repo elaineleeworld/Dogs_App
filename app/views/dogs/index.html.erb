@@ -1,9 +1,10 @@
-<h1>Dogs Who Want to Play Now!</h1>
+<h1>Pups looking for Play.. Now!</h1>
 
 <% @dogs.each do |dog| %>
 	<tr>
-		<td><%= image_tag(dog.pic, height: "150px" )%></td>
-  		<td><%= dog.name %> is <%= dog.age %> years old from  <%= dog.city %> and wants to play now!</td>
+		<td><%= image_tag(dog.pic, height: "150px", class: "style_image" ) %></td>
+  		<td><%= dog.name %> is <%= dog.age %> years old. </td>
+  		<td><%= dog.name %> is a <%= dog.breed %> from  <%= dog.city %> and wants to play now!</td>
   		<td><%= link_to "Show" , dog %></td>
   		<td><%= link_to "Edit" , edit_dog_path(dog) %></td>
   		<td><%= link_to "Remove" , dog, method: :delete, data: {confirm: "Are you sure?" } %></td>
