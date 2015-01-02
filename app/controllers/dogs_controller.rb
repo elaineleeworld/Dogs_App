@@ -2,7 +2,6 @@ class DogsController < ApplicationController
 	def index
 		@dogs = Dog.all
 	end
-<<<<<<< HEAD
 
 	def show
 		@dog = Dog.find(params[:id])
@@ -47,6 +46,4 @@ class DogsController < ApplicationController
 	def dog_params
 		params.require(:dog).permit(:name, :age, :breed, :city, :pic)
 	end
-=======
->>>>>>> 81588a578eb2c2b93aa7c16766bd85373de85575
 end

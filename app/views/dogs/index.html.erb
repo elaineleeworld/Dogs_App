@@ -1,31 +1,20 @@
-<<<<<<< HEAD
+
 <h1>Pups looking for Play.. Now!</h1>
 
 <% @dogs.each do |dog| %>
-	<tr>
-		<td><%= image_tag(dog.pic, height: "150px", class: "style_image" ) %></td>
-  		<td><%= dog.name %> is <%= dog.age %> years old. </td>
-  		<td><%= dog.name %> is a <%= dog.breed %> from  <%= dog.city %> and wants to play now!</td>
-  		<td><%= link_to "Show" , dog %></td>
-  		<td><%= link_to "Edit" , edit_dog_path(dog) %></td>
-  		<td><%= link_to "Remove" , dog, method: :delete, data: {confirm: "Are you sure?" } %></td>
-  	</tr>
-=======
-<h1>List of All Dogs</h1>
-
-<% @dogs.each do |dog| %>
-
-   <%= dog.name %> is from  <%= dog.city %> and here I am! 
-   <%= image_tag(dog.pic, height: "100px" )%>
->>>>>>> 81588a578eb2c2b93aa7c16766bd85373de85575
-   <br/>
+	
+		<%= image_tag(dog.pic, height: "150px", class: "style_image" ) %>
+  		<%= dog.name %> is <%= dog.age %> years old. 
+  		<%= dog.name %> is a <%= dog.breed %> from  <%= dog.city %> and wants to play now!
+  		<%= link_to "Show" , dog %>
+  		<%= link_to "Edit" , edit_dog_path(dog) %>
+  		<%= link_to "Remove" , dog, method: :delete, data: {confirm: "Are you sure?" } %>
+      <br>
+  	
 
 <% end %>
 
-<<<<<<< HEAD
-<%= link_to "New dog", new_dog_path %>
 
-=======
->>>>>>> 81588a578eb2c2b93aa7c16766bd85373de85575
+<%= link_to "New dog", new_dog_path %>
 
 
