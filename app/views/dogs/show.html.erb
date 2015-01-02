@@ -1,9 +1,10 @@
 <h1> <%= @dog.name %> </h1>
 
-<p> <%= image_tag(dog.pic, height: "150px" )%> </p>
+
 
 <p> Hi!  My name is <%= @dog.name %> and I am <%= @dog.age %> years old.  I am a <%= @dog.breed %> and live in <%= @dog.city %> </p>
 <p> I'm ready to play! </p>
+
 
 
 <%= link_to "Edit this dog", edit_dog_path(@dog) %>
