@@ -1,9 +1,9 @@
 body {
-	background-color: lightblue;
+	background-color: lightgray;
 }
 
 h1 {
-	color: yellow;
+	color: green;
 }
 
 a {
@@ -11,10 +11,28 @@ a {
 }
 
 p {
-	color: yellow;
+	color: blue;
 }
 
 .style_image {
 	border: 2px solid yellow;
     border-radius: 25px;
 }
+
+td {
+	color: blue;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.play_button {
+	background-color: lightgreen;
+	color: blue;
+}
+
+div {
+	vertical-align: top;
+
+
+}
+

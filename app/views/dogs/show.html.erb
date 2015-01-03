@@ -1,9 +1,23 @@
-<h1> <%= @dog.name %> </h1>
 
+<div>
+<%= image_tag(@dog.pic, height: "150px", class: "style_image" ) %>
 
+<ul>
+<li> <%= @dog.name %> </li>
+<li> <%= @dog.age %> years old</li>
+<li> <%= @dog.breed %> </li>
+</ul>
 
+</div>
+<h1>About</h1>
 <p> Hi!  My name is <%= @dog.name %> and I am <%= @dog.age %> years old.  I am a <%= @dog.breed %> and live in <%= @dog.city %> </p>
 <p> I'm ready to play! </p>
+
+<%= form_for @dog do |f| %>
+<%= f.submit "Play Now!", :class => 'play_button' %>
+
+<% end %>
+<br>
 
 
 
