@@ -1,17 +1,26 @@
 
-<div>
-<%= image_tag(@dog.pic, height: "150px", class: "style_image" ) %>
 
+<%= image_tag(@dog.pic, height: "150px", class: "style_image" ) %>
+<div>
 <ul>
-<li> <%= @dog.name %> </li>
+<h1> <%= @dog.name %> </h1>
 <li> <%= @dog.age %> years old</li>
 <li> <%= @dog.breed %> </li>
 </ul>
 
 </div>
-<h1>About</h1>
-<p> Hi!  My name is <%= @dog.name %> and I am <%= @dog.age %> years old.  I am a <%= @dog.breed %> and live in <%= @dog.city %> </p>
-<p> I'm ready to play! </p>
+
+<h3>Home city: <%= @dog.city %></h3>
+<h3>Weight: <%= @dog.weight %></h3>
+<h3>Ever been aggressive? <%= @dog.aggressive %></h3>
+<h3>Good with kids? <%= @dog.kids %></h3>
+<h3>Update on shots? <%= @dog.shots %></h3>
+<h3>Play style:  <%= @dog.playstyle %></h3>
+<h3>Funny fact:  <%= @dog.funnyfact %></h3>
+<h3>Additional info:  <%= @dog.info %></h3>
+<h3>Friends:    </h3>
+
+
 
 <%= form_for @dog do |f| %>
 <%= f.submit "Play Now!", :class => 'play_button' %>

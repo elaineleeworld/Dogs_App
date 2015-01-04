@@ -1,10 +1,21 @@
 <%= form_for @dog do |f| %>
 	Name: <%= f.text_field :name %>
+	<br>
 	Age: <%= f.text_field :age %>
+	<br>
 	Breed: <%= f.text_field :breed %>
+	<br>
 	City: <%= f.text_field :city %>
+	<br>
+	Weight: <%= f.text_field :weight %>
+	<br>
+	Aggressive: <%= f.text_field :aggressive %>
+	<br>
+	
+
 
 
 	<%= f.submit "Submit!" %>
+	<br>
 
 <% end %>
