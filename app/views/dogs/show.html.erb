@@ -18,9 +18,11 @@
 <h3>Play style:  <%= @dog.playstyle %></h3>
 <h3>Funny fact:  <%= @dog.funnyfact %></h3>
 <h3>Additional info:  <%= @dog.info %></h3>
-<h3>Friends:    </h3>
+<h3>Playdates:  </h3>
 
-
+<% @dog.requests_received.each do |d| %>
+	<%= d.inviter.name %>
+<% end %>
 
 <%= form_for @dog do |f| %>
 <%= f.submit "Play Now!", :class => 'play_button' %>
