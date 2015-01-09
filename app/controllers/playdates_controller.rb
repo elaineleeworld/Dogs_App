@@ -2,7 +2,8 @@ class PlaydatesController < ApplicationController
 
 	def create
 		@playdate = Playdate.new(playdate_params)
-
+		@playdate.inviter = current_dog
+		@playdate.invitee 
 		if @playdate.save
 			redirect_to playdates_path
 		else

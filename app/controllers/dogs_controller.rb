@@ -5,6 +5,7 @@ class DogsController < ApplicationController
 
 	def show
 		@dog = Dog.find(params[:id])
+		@playdate = Playdate.new
 	end
 
 	def new
@@ -44,6 +45,6 @@ class DogsController < ApplicationController
 	private
 
 	def dog_params
-		params.require(:dog).permit(:name, :age, :breed, :city, :pic)
+		params.require(:dog).permit(:name, :age, :breed, :city, :pic, :email, :password)
 	end
 end

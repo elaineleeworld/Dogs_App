@@ -1,5 +1,34 @@
-<h1>Add a new dog</h1>
+<h1>Sign up your dog!</h1>
 
-<%= render "dogs/form", object: @dog %>
+<ul>
+  <%= @dog.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+
+<%= form_for @dog do |f| %>
+  <div>
+    <%= f.label :name, "Name of your Dog" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%#= render "dogs/form", object: @dog %>
 
 <%= link_to "Back to dog list", dogs_path %>

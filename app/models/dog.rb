@@ -12,16 +12,22 @@ class Dog
 	field :playstyle, type: String
 	field :funnyfact, type: String
 	field :info, type: String
+	field :email, type: String
+	field :password_digest, type: String
+	attr_reader :password
 
     has_many :requests_made, class_name: "Playdate", inverse_of: :inviter
     has_many :requests_received, class_name: "Playdate", inverse_of: :invitee
-    
+
     # has_and_belongs_to_many :playdates, as: :inviter
     # has_and_belongs_to_many :playdates, as: :invitee
 
 
     def password=(unencrypted_password)
-  	self.password_digest = BCrypt::Password.create(unencrypted_password)
+    	unless unencrypted_password.empty?
+    		@password = unencrypted_password
+  			self.password_digest = BCrypt::Password.create(unencrypted_password)
+  		end
   	end
 
 	def authenticate(unencrypted_password)
@@ -31,5 +37,8 @@ class Dog
 	  		return false
 	  	end
 	end
-
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false },
+  format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :password, presence: true, length: { in: 6..20 }, confirmation: true
 end
