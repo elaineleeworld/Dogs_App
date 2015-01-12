@@ -2,16 +2,14 @@ class Dog
 	include Mongoid::Document
 	include Mongoid::Timestamps
 	field :name, type: String
-	field :age, type: Float
+	field :age, type: Integer
 	field :breed, type: String
 	field :city, type: String
-	field :weight, type: Float
+	field :weight, type: Integer
 	field :image, type: String
 	field :aggressive, type: String
 	field :kids, type: String
 	field :shots, type: String
-	field :playstyle, type: String
-	field :funnyfact, type: String
 	field :info, type: String
 	field :email, type: String
 	field :password_digest, type: String
@@ -22,6 +20,7 @@ class Dog
 
     # has_and_belongs_to_many :playdates, as: :inviter
     # has_and_belongs_to_many :playdates, as: :invitee
+
     def date_published
   	self.created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p") 
   	end

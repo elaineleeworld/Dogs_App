@@ -2,7 +2,7 @@ class DogsController < ApplicationController
 	def index
 		@dogs = Dog.all
 		# from authentication-app-1 for current_user
-		# @current_dog = Dog.find(session[:dog_id])
+		@current_dog = Dog.find(session[:dog_id])
 	end
 
 	def show
@@ -48,6 +48,6 @@ class DogsController < ApplicationController
 	private
 
 	def dog_params
-		params.require(:dog).permit(:name, :age, :breed, :city, :image, :email, :password, :weight, :kids, :shots, :playstyle, :funnyfact, :info, :aggressive)
+		params.require(:dog).permit(:name, :age, :breed, :city, :image, :email, :password, :weight, :kids, :shots, :info, :aggressive)
 	end
 end

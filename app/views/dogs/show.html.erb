@@ -1,31 +1,29 @@
-<h1>Welcome to your page, <%= @dog.name %>!</h1>
-<!--  @current_dog.name -->
+<!-- if playdate.dog.email == current_dog.email  -->
 
 <%= link_to "Edit your profile", edit_dog_path(@dog) %>
 
-<%= link_to "Delete profiile", :dog, method: :delete, data: { confirm: "Are you sure you want to delete this dog?" } %>
+<%= link_to "Delete profile", :dog, method: :delete, data: { confirm: "Are you sure you want to delete this dog?" } %>
 
 <%= link_to "Find some playdates!", dogs_path %>
+
+<h1>Welcome to your page, <%= @dog.name %>!</h1>
 
 
 <%= image_tag(@dog.image, height: "150px", class: "style_image" ) %>
 <div>
 <ul>
 <h1> <%= @dog.name %> </h1>
-<li> <%= @dog.age %> years old</li>
-<li> <%= @dog.breed %> </li>
 </ul>
 
 </div>
-
+<h3>Age: <%= @dog.age %></h3>
+<h3>Breed: <%= @dog.breed %></h3>
 <h3>Home city: <%= @dog.city %></h3>
-<h3>Weight: <%= @dog.weight %></h3>
+<h3>Weight: <%= @dog.weight %> pounds</h3>
 <h3>Ever been aggressive? <%= @dog.aggressive %></h3>
 <h3>Good with kids? <%= @dog.kids %></h3>
 <h3>Update on shots? <%= @dog.shots %></h3>
-<h3>Play style:  <%= @dog.playstyle %></h3>
-<h3>Funny fact:  <%= @dog.funnyfact %></h3>
-<h3>Additional info:  <%= @dog.info %></h3>
+<h3>When usually free:  <%= @dog.info %></h3>
 <!-- showing an Avatar image -->
 <%= image_tag @dog.image.url(:large) %>
 

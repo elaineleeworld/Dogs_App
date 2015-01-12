@@ -1,27 +1,20 @@
-<!-- You are logged in, @current_dog.name -->
-<h1>Party on with these pups!</h1>
+<h4> You are logged in, <%= @current_dog.name %>! Now get some playdates set up! WOOF! </h4> <%= link_to "Log Out", logout_path, {method: :delete} %>
+Session user id: <%= session[:dog_id] %>
+
+
+<h1>Browse for playdates for <%= @current_dog.name %>!</h1>
 
 <% @dogs.each do |dog| %>
-	
-		<%= image_tag(dog.image, height: "150px", class: "style_image" ) %>
+		<%= image_tag(dog.image.url(:thumb), class: "style_image") %>
+		
   		<%= dog.name %> is a <%= dog.age %> year old <%= dog.breed %> from  <%= dog.city %> 
   		<%= link_to "More Info" , dog %>
-  		<%= link_to "Edit" , edit_dog_path(dog) %>
-  		<%= link_to "Remove" , dog, method: :delete, data: {confirm: "Are you sure?" } %>
       <br>
-  	
 
 <% end %>
 
-<!-- from authentication-app-1 -->
-<p>Session user id: <%= session[:dog_id] %></p>
-<br>
-<%#=Current Dog User Name: @current_dog.name %>
-<br>
-<%#= @current_dog %>
+<%= link_to "Add a dog", new_dog_path %>
 
-<%= link_to "New dog", new_dog_path %>
 
-<%= link_to "Log Out", logout_path, {method: :delete} %>
 
 
