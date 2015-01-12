@@ -1,11 +1,12 @@
 class Dog
 	include Mongoid::Document
+	include Mongoid::Timestamps
 	field :name, type: String
 	field :age, type: Float
 	field :breed, type: String
 	field :city, type: String
 	field :weight, type: Float
-	field :pic, type: String
+	field :image, type: String
 	field :aggressive, type: String
 	field :kids, type: String
 	field :shots, type: String
@@ -21,7 +22,12 @@ class Dog
 
     # has_and_belongs_to_many :playdates, as: :inviter
     # has_and_belongs_to_many :playdates, as: :invitee
+    def date_published
+  	self.created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p") 
+  	end
 
+  	#to upload an image to Rails app
+  	mount_uploader :image, AvatarUploader
 
     def password=(unencrypted_password)
     	unless unencrypted_password.empty?

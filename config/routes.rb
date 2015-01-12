@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # get '/' => "dogs#index"
 
   root 'dogs#index'
-  resources :dogs
+  resources :dogs do
+    resources :playdates, only: :create
+  end
 
   get 'signup' => 'dogs#new'
 

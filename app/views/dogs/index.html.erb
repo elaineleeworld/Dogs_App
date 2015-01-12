@@ -1,9 +1,9 @@
-
+<!-- You are logged in, @current_dog.name -->
 <h1>Party on with these pups!</h1>
 
 <% @dogs.each do |dog| %>
 	
-		<%= image_tag(dog.pic, height: "150px", class: "style_image" ) %>
+		<%= image_tag(dog.image, height: "150px", class: "style_image" ) %>
   		<%= dog.name %> is a <%= dog.age %> year old <%= dog.breed %> from  <%= dog.city %> 
   		<%= link_to "More Info" , dog %>
   		<%= link_to "Edit" , edit_dog_path(dog) %>
@@ -13,8 +13,12 @@
 
 <% end %>
 
-
+<!-- from authentication-app-1 -->
 <p>Session user id: <%= session[:dog_id] %></p>
+<br>
+<%#=Current Dog User Name: @current_dog.name %>
+<br>
+<%#= @current_dog %>
 
 <%= link_to "New dog", new_dog_path %>
 

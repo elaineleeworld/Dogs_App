@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	# all of this from authentication-app-1
 	def new
     end
 

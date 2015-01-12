@@ -1,4 +1,5 @@
 <h1>Welcome to your page, <%= @dog.name %>!</h1>
+<!--  @current_dog.name -->
 
 <%= link_to "Edit your profile", edit_dog_path(@dog) %>
 
@@ -7,7 +8,7 @@
 <%= link_to "Find some playdates!", dogs_path %>
 
 
-<%= image_tag(@dog.pic, height: "150px", class: "style_image" ) %>
+<%= image_tag(@dog.image, height: "150px", class: "style_image" ) %>
 <div>
 <ul>
 <h1> <%= @dog.name %> </h1>
@@ -25,13 +26,34 @@
 <h3>Play style:  <%= @dog.playstyle %></h3>
 <h3>Funny fact:  <%= @dog.funnyfact %></h3>
 <h3>Additional info:  <%= @dog.info %></h3>
+<!-- showing an Avatar image -->
+<%= image_tag @dog.image.url(:large) %>
+
 <h3>Playdates:  </h3>
 
 <% @dog.requests_received.each do |d| %>
 	<%= d.inviter.name %>
 <% end %>
 
-<%= form_for @playdate do |f| %>
+<h3>Add a new playdate request!</h3>
+<%= form_for [@dog, @playdate] do |f| %> 
+	<%= f.fields_for :playdate_attributes do |p| %>
+		<div>
+			<%= p.label :time %>
+			<%= p.text_field :time %>
+		</div>
+		<div>
+			<%= p.label :date %>
+			<%= p.text_field :date %>
+		</div>
+		<div>
+			<%= p.label :location %>
+			<%= p.text_field :location %>
+		</div>
+		<% end %>
+
+
+	
 <%= f.submit "Play Now!", :class => 'play_button' %>
 
 <% end %>

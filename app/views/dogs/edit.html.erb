@@ -1,6 +1,67 @@
 <h1> Edit this dog profile </h1>
 
-<%= render "dogs/form", object: @dog %>
+<%#= render "dogs/form", object: @dog %>
 <br>
+<%= form_for @dog do |f| %>
+  <div>
+    <%= f.label :name, "Name of your Dog" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+  <div>
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+  </div>
+  <div>
+    <%= f.label :city, "Current City" %>
+    <%= f.text_field :city %>
+  </div>
+  <div>
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+  </div>
+ <div>
+    <%= f.label :aggressive, "Aggressive?" %>
+    <%= f.text_field :aggressive %>
+  </div>
+  <div>
+    <%= f.label :kids ,"Good with Kids?" %>
+    <%= f.text_field :kids %>
+  </div>
+  <div>
+    <%= f.label :shots, "Current shots updated?" %>
+    <%= f.text_field :shots %>
+  </div>
+  <div>
+    <%= f.label :playstyle, "Play Style:" %>
+    <%= f.text_field :playstyle %>
+  </div>
+   <div>
+    <%= f.label :funnyfact, "Funny Fact:" %>
+    <%= f.text_field :funnyfact %>
+  </div>
+  <div>
+    <%= f.label :info, "Additional Info:" %>
+    <%= f.text_field :info %>
+  </div>
+  <div>
+    <%= f.label :image, "Change image:" %>
+    <%= f.file_field :image %>
+  </div>
 
-<%= link_to "Back to dog list", dogs_path %>
+<%= link_to "Back to your profile page", dog_path %>

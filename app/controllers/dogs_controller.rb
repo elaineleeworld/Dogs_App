@@ -1,6 +1,8 @@
 class DogsController < ApplicationController
 	def index
 		@dogs = Dog.all
+		# from authentication-app-1 for current_user
+		# @current_dog = Dog.find(session[:dog_id])
 	end
 
 	def show
@@ -13,7 +15,8 @@ class DogsController < ApplicationController
 	end
 
 	def create
-		@dog = Dog.new(dog_params)
+		# from authentication-app-1
+		@dog = Dog.create(dog_params)
 
 		if @dog.save
 			redirect_to dogs_path
@@ -45,6 +48,6 @@ class DogsController < ApplicationController
 	private
 
 	def dog_params
-		params.require(:dog).permit(:name, :age, :breed, :city, :pic, :email, :password)
+		params.require(:dog).permit(:name, :age, :breed, :city, :image, :email, :password, :weight, :kids, :shots, :playstyle, :funnyfact, :info, :aggressive)
 	end
 end

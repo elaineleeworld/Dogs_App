@@ -25,7 +25,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'mongoid', '~>4.0.0'
-
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mini_magick'
+gem 'figaro'
 gem 'bcrypt', '~> 3.1.9'
 
 # Use ActiveModel has_secure_password
