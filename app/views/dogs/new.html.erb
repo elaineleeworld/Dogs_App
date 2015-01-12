@@ -1,5 +1,5 @@
 <h1>Sign up your dog!</h1>
-
+<p>Each pet you sign up should be associated with a different email</p>
 <ul>
   <%= @dog.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
@@ -64,6 +64,5 @@
   </div>
 <% end %>
 
-<%#= render "dogs/form", object: @dog %>
 
-<%#= link_to "Check out your new page!", new_dog_path %>
+<%= link_to "Back to browse playdates", dogs_path %>
