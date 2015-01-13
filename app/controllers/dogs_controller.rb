@@ -4,7 +4,7 @@ class DogsController < ApplicationController
 
 	def index
 		@dogs = Dog.all
-		# @current_dog = Dog.find(session[:dog_id])
+		@current_dog = Dog.find(session[:dog_id])
 	end
 
 	def show
@@ -17,7 +17,6 @@ class DogsController < ApplicationController
 	end
 
 	def create
-		# from authentication-app-1
 		@dog = Dog.create(dog_params)
 
 		if @dog.save
