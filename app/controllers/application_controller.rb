@@ -5,12 +5,12 @@ class ApplicationController < ActionController::Base
   # from authentication-app-1
   include SessionsHelper
 
-  # def logged_in 
-  # 	unless current_dog
-  # 		redirect_to login_path
-  # 	end
-  # end
-  def logged_in
-  	session[:dog_id] != nil
+  def logged_in 
+  	unless current_dog
+  		redirect_to login_path
+  	end
   end
+  # def logged_in
+  # 	session[:dog_id] != nil
+  # end
 end
