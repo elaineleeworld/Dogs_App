@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     end
 
 	def create
-	  	dog = Dog.where(email: params[:login][:email]).first unless params[:login][:email].empty?
+	  	dog = Dog.where(email: params[:login][:email]).first 
 
 
 	  	# logger.debug(dog)
