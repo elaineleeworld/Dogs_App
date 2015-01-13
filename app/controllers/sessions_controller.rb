@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 	def create
 	  	dog = Dog.where(email: params[:login][:email]).first 
 
-
+	  	# testing
 	  	# logger.debug(dog)
 	  	# logger.debug(params)
 
