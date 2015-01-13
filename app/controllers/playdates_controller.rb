@@ -3,12 +3,14 @@ class PlaydatesController < ApplicationController
 	def create
 	 	# from blog1 app in class commentscontroller.rb
 		dog = Dog.find(params[:dog_id])
-		playdate = dog.playdates.create(playdate_params)
-		redirect_to dog_path(playdate.dog)
+		playdate = dog.requests_received.new(playdate_params)
+		playdate.inviter = current_dog
+		if playdate.save
+			redirect_to dog_path(playdate.invitee)
 		# setting up current user relation to inviter below:
 		# @playdate.inviter = current_dog
 		# @playdate.invitee 
-	
+		end
 			
 	end
 	# inviter and invitee and then show only the invitees on current users page
@@ -21,7 +23,7 @@ class PlaydatesController < ApplicationController
 
 		private
 		def playdate_params
-			params.require(:playdate).permit(playdate_attributes: [:time, :date, :location])
+			params.require(:playdate).permit(:time, :date, :location)
 
 
 		end	

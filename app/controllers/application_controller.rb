@@ -4,4 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # from authentication-app-1
   include SessionsHelper
+
+  def logged_in 
+  	unless current_dog
+  		redirect_to login_path
+  	end
+  end
 end

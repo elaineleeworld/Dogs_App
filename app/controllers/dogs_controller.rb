@@ -1,8 +1,10 @@
 class DogsController < ApplicationController
+
+	before_action :logged_in, except: :new
+
 	def index
 		@dogs = Dog.all
-		# from authentication-app-1 for current_user
-		@current_dog = Dog.find(session[:dog_id])
+		# @current_dog = Dog.find(session[:dog_id])
 	end
 
 	def show
@@ -19,6 +21,7 @@ class DogsController < ApplicationController
 		@dog = Dog.create(dog_params)
 
 		if @dog.save
+			session[:dog_id] = @dog.id.to_s
 			redirect_to dogs_path
 		else
 			render :new
