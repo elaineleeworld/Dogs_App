@@ -17,25 +17,8 @@ dogs = Dog.create([
 	 aggressive: "No", 
 	 kids: "No",
 	 shots: "Yes",
-	 image: "http://www.schnauzers.us/assets/rsimages/toby-3.jpg"}, 
-	{name: "Kiko", 
-	 email: "kiko@gmail.com",
-	 password: "password",
-	 age: 3, 
-	 breed: "Shiba Inu", 
-	 city: "NYC", 
-	 weight: 20, 
-	 aggressive: "No", 
-	 kids: "Yes",
-	 shots: "Yes",
-	 info: "evenings after 9pm",
-	 image: "http://www.dogsindepth.com/spitz_dog_breeds/images/shiba_inu_h04.jpg"},
-	# {name: "Toby", city: "Chicago", pic: "http://www.schnauzers.us/assets/rsimages/toby-3.jpg"}, 
-	# {name: "Kiko", city: "NYC", pic: "http://www.dogsindepth.com/spitz_dog_breeds/images/shiba_inu_h04.jpg"},
-	# {name: "Toby", city: "Chicago", pic: "http://www.schnauzers.us/assets/rsimages/toby-3.jpg"}, 
-	# {name: "Kiko", city: "NYC", pic: "http://www.dogsindepth.com/spitz_dog_breeds/images/shiba_inu_h04.jpg"},
-	# {name: "Toby", city: "Chicago", pic: "http://www.schnauzers.us/assets/rsimages/toby-3.jpg"}, 
-	# {name: "Kiko", city: "NYC", pic: "http://www.dogsindepth.com/spitz_dog_breeds/images/shiba_inu_h04.jpg"},
-	# {name: "Toby", city: "Chicago", pic: "http://www.schnauzers.us/assets/rsimages/toby-3.jpg"}, 
+	 info: "everyday",
+	 image: "http://www.schnauzers.us/assets/rsimages/toby-3.jpg"}
 
 	])
+
