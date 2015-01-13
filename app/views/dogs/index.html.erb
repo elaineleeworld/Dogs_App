@@ -1,7 +1,7 @@
 <% if current_dog %>
 	<h4> You are logged in, <%= @current_dog.name %>! Now get some playdates set up! WOOF! </h4> 
 	<%= link_to "Log Out", logout_path, {method: :delete} %>
-	<!-- Session user id: <%= session[:dog_id] %> -->
+	Session user id: <%= session[:dog_id] %>
 <% end %>
 
 <h1>Browse for playdates for <%= @current_dog.name %>!</h1>

@@ -21,7 +21,7 @@ class DogsController < ApplicationController
 
 		if @dog.save
 			session[:dog_id] = @dog.id.to_s
-			redirect_to dogs_path
+			redirect_to dog_path(@dog)
 		else
 			render :new
 		end
