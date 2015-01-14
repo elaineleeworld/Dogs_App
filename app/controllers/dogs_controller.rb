@@ -1,6 +1,6 @@
 class DogsController < ApplicationController
 
-	before_action :logged_in, except: :new
+	# before_action :logged_in, except: :new
 
 	def index
 		@dogs = Dog.all
@@ -17,11 +17,10 @@ class DogsController < ApplicationController
 	end
 
 	def create
-		@dog = Dog.create(dog_params)
-
+		@dog = Dog.new(dog_params)
 		if @dog.save
 			session[:dog_id] = @dog.id.to_s
-			redirect_to dog_path(@dog)
+			redirect_to dog_path(@dog), :notice => "Thanks for signing up! Check out your new profile page!"
 		else
 			render :new
 		end

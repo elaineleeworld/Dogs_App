@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 	  	if dog && dog.authenticate(params[:login][:password])
 	  		# set a cookie / store a session
 	  		session[:dog_id] = dog.id.to_s
-	  		redirect_to dogs_path, :notice => "You are logged in #{current_dog.name} !"
+	  		redirect_to dog_path(dog), :notice => "You are logged in #{current_dog.name} !"
 	  	else
 
 	  		redirect_to login_path, :notice => "Incorrect email or password. Please try again."

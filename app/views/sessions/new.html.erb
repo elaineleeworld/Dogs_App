@@ -1,21 +1,36 @@
-<h1>Log In</h1>
+<section class="container">
+		<section class="row">
+			<div class="col-xs-12 col-sm-6 left">
+				<form method="post" action="#" role="login">
 
-<%= form_for :login do |f| %>
-	<div>
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-	</div>
-	<div>
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-	</div>
+				<%= image_tag "getplaydlogo.png", class: "img-responsive" %>
 
-	<div>
-		<%= f.submit "Log In" %>
+				<h1>Log In to Get Playd!</h1>
 
-	</div>
+				<%= form_for :login do |f| %>
+					<div>
+					<%= f.label :email %>
+					<%= f.text_field :email, class: "form-control input-lg"  %>
+					</div>
+					<div>
+					<%= f.label :password %>
+					<%= f.password_field :password, class: "form-control input-lg" %>
+					</div>
 
-<% end %>
-<br>
-<br>
-<%= link_to "Sign up here if you are not yet a member", signup_path %>
+					<div>
+						<%= f.submit "Log In", class: "btn btn-block btn-success btn-lg", id: "login" %>
+
+					</div>
+					<%= link_to "Click here to sign up if you are not yet a member", signup_path %>
+
+				<% end %>
+				</form>
+			</div>
+			<div class="hidden-xs col-sm-6 right">
+				<%= image_tag "dogsplaying.jpg", class: "img-responsive"%>
+			</div>
+
+			<%= image_tag "dog_login.jpg", class: "img-responsive", id: "singledog" %>
+			</div>
+		</section>
+	</section>
