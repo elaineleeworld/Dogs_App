@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :playdates, only: :create
   end
 
+  # get '*path' => 'sessions#new'
   get 'signup' => 'dogs#new'
 
   get '/login' => 'sessions#new'

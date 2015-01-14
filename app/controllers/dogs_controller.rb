@@ -1,10 +1,10 @@
 class DogsController < ApplicationController
 
-	# before_action :logged_in, except: :new
+	before_action :logged_in, except: [:new, :create]
 
 	def index
 		@dogs = Dog.all
-		@current_dog = Dog.find(session[:dog_id])
+		@current_dog = current_dog
 	end
 
 	def show
