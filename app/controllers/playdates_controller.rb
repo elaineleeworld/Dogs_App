@@ -2,7 +2,10 @@ class PlaydatesController < ApplicationController
 
 	def create
 	 	# from blog1 app in class commentscontroller.rb
+	
 		dog = Dog.find(params[:dog_id])
+		@playdate_params = params[:playdate][:playdate_attributes]
+
 		playdate = dog.requests_received.new(playdate_params)
 		playdate.inviter = current_dog
 		if playdate.save
@@ -23,8 +26,9 @@ class PlaydatesController < ApplicationController
 
 		private
 		def playdate_params
-			params.require(:playdate).permit(:time, :date, :location)
-
+			logger.debug("the playdate_params are")
+	 		logger.debug(@playdate_params)
+			@playdate_params.permit(:location, :time, :date)
 
 		end	
 end

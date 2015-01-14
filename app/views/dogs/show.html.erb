@@ -38,29 +38,24 @@
 <%= image_tag @dog.image.url(:large), class: "img-responsive" %>
 
 <% if @dog.email != current_dog.email %>
-
-<h3>Add a new playdate request!</h3>
-<%= form_for [@dog, @playdate] do |f| %> 
-<%= f.fields_for :playdate_attributes do |p| %>
-<div>
-	<%= p.label :time %>
-	<%= p.text_field :time %>
-</div>
-<div>
-	<%= p.label :date %>
-	<%= p.text_field :date %>
-</div>
-<div>
-	<%= p.label :location %>
-	<%= p.text_field :location %>
-</div>
-<% end %>
-
-
-
-<%= f.submit "Play Now!", :class => 'play_button' %>
-
-<% end %>
-<br>
+	<h3>Add a new playdate request!</h3>
+	<%= form_for [@dog, @playdate] do |f| %> 
+		<%= f.fields_for :playdate_attributes do |p| %>
+			<div>
+				<%= p.label :time %>
+				<%= p.time_field :time %>
+			</div>
+			<div>
+				<%= p.label :date %>
+				<%= p.date_field :date %>
+			</div>
+			<div>
+				<%= p.label :location %>
+				<%= p.text_field :location %>
+			</div>
+		<% end %>
+		
+		<%= f.submit "Play Now!", :class => 'play_button' %>
+	<% end %>
 <% end %>
 

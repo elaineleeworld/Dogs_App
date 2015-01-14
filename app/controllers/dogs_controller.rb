@@ -32,7 +32,6 @@ class DogsController < ApplicationController
 
 	def update
 		@dog = Dog.find(params[:id])
-
 		if @dog.update_attributes(dog_params)
 			redirect_to dogs_path
 		else
@@ -43,12 +42,12 @@ class DogsController < ApplicationController
 	def destroy
 		@dog = Dog.find(params[:id])
 		@dog.destroy
-		redirect_to dogs_path
+		redirect_to signup_path
 	end
 
 	private
 
 	def dog_params
-		params.require(:dog).permit(:name, :age, :breed, :city, :image, :email, :password, :confirmation_password, :weight, :kids, :shots, :info, :aggressive)
+		params.require(:dog).permit(:name, :age, :breed, :city, :image, :email, :password, :confirmation_password, :weight, :kids, :shots, :info, :aggressive, :playdate_attributes => [:time, :date, :location])
 	end
 end
