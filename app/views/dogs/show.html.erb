@@ -29,10 +29,10 @@
 <h3>Playdates with:  </h3>
 
 <% @dog.requests_received.each do |d| %>
-<%= d.inspect %>
-<%= d.inviter.name %>
-<%#= d.inviter.image %>
+<%= d.inviter.name %> at <%= d.location %> at <%= d.time %> on <%= d.date %> 
+<%#= d.image %>
 <% end %>
+
 <br>
 <br>
 <%= image_tag @dog.image.url(:large), class: "img-responsive" %>
