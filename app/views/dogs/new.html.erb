@@ -2,8 +2,11 @@
 
 <p>Each pet you sign up should be associated with a different email</p>
 <ul>
+
+  <% if @dog.errors.full_messages.length > 0%>
   <%= @dog.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+    <li><%= msg  %></li>
+  <% end %>
   <% end %>
 </ul>
 
