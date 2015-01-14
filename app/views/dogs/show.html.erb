@@ -1,12 +1,3 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <!-- <img alt="Current Dog User" src="<%= @dog.image.url(:small) %>"> -->
-      </a>
-    </div>
-  </div>
-</nav>
 
 <% if @dog.email == current_dog.email %>
 
@@ -21,11 +12,11 @@
 
 <%= image_tag(@dog.image, height: "150px", class: "style_image" ) %>
 <div>
-<ul>
-<h1> <%= @dog.name %> </h1>
-</ul>
-<br>
-<%= link_to "Find some playdates now!", dogs_path %>
+	<ul>
+		<h1> <%= @dog.name %> </h1>
+	</ul>
+	<br>
+	<%= link_to "Find some playdates now!", dogs_path %>
 </div>
 <h3>Age: <%= @dog.age %></h3>
 <h3>Breed: <%= @dog.breed %></h3>
@@ -38,8 +29,9 @@
 <h3>Playdates with:  </h3>
 
 <% @dog.requests_received.each do |d| %>
-	<%= d.inviter.name %>
-	<%#= d.inviter.image %>
+<%= d.inspect %>
+<%= d.inviter.name %>
+<%#= d.inviter.image %>
 <% end %>
 <br>
 <br>
@@ -49,23 +41,23 @@
 
 <h3>Add a new playdate request!</h3>
 <%= form_for [@dog, @playdate] do |f| %> 
-	<%= f.fields_for :playdate_attributes do |p| %>
-		<div>
-			<%= p.label :time %>
-			<%= p.text_field :time %>
-		</div>
-		<div>
-			<%= p.label :date %>
-			<%= p.text_field :date %>
-		</div>
-		<div>
-			<%= p.label :location %>
-			<%= p.text_field :location %>
-		</div>
-		<% end %>
+<%= f.fields_for :playdate_attributes do |p| %>
+<div>
+	<%= p.label :time %>
+	<%= p.text_field :time %>
+</div>
+<div>
+	<%= p.label :date %>
+	<%= p.text_field :date %>
+</div>
+<div>
+	<%= p.label :location %>
+	<%= p.text_field :location %>
+</div>
+<% end %>
 
 
-	
+
 <%= f.submit "Play Now!", :class => 'play_button' %>
 
 <% end %>
