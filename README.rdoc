@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Get Playd
+A web app that helps your pup find and set up playdates in your area.
+_________________________________________________________
 
-Things you may want to cover:
+This was an individual project as a student at General Assembly that utilized and demonstrated my knowledge of Ruby on Rails, MongoDB, Bootstrap, HTML, CSS, embedded Ruby, RESTful routes, and live deployment on Heroku.  Images were saved using Amazon S3.
 
-* Ruby version
+This project also required the implementation of authentication such as login and logout utilizing a unique email and confirming password.  
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Full working CRUD was also required for this project.  As a user of Get Playd, you have the ability to create, update, edit, and delete your dog's profile after successfully logging in.
